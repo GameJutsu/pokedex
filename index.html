@@ -3,10 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/f06cbd7842.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/stylesheet/style.css" />
     <title>Pokedex</title>
   </head>
   <body>
-    <script src="script.js"></script>
+    <div class="header-container">
+      <div class="navbar">
+        <button class="back-button">
+          <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+        </button>
+        <button class="menu-button"><i class="fas fa-bars fa-2x"></i></button>
+      </div>
+      <h1 class="header">Pokedex</h1>
+    </div>
+    <div class="pokemon-card-container" id="pokemon-card-container">
+      <div class="pokemon-card">
+        <img src="assets/img/pokeball.png" class="pokemon-card-background" />
+        <p class="pokemon-id"><em>#001</em></p>
+        <p class="pokemon-name">Bulbasaur</p>
+        <ul class="pokemon-type-container">
+          <li class="pokemon-type">Grass</li>
+          <li class="pokemon-type">Poison</li>
+        </ul>
+        <img
+          src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
+          class="pokemon-image"
+        />
+      </div>
+    </div>
+
+    <script src="assets/script/script.js"></script>
   </body>
 </html>
