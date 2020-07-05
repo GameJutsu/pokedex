@@ -14,7 +14,7 @@ async function calculate(id) {
 
   //Adding required classes to elements
   card.classList.add("pokemon-card");
-  card.classList.add(data.types[data.types.length - 1].type.name);
+  card.classList.add(data.types[0].type.name);
   cardBG.classList.add("pokemon-card-background");
   pID.classList.add("pokemon-id");
   pName.classList.add("pokemon-name");
@@ -38,16 +38,13 @@ async function calculate(id) {
   card.appendChild(pImg);
 
   //Handling types separately
-  data.types
-    .slice()
-    .reverse()
-    .forEach((item) => {
-      const pType = document.createElement("li");
-      pType.classList.add("pokemon-type");
-      pType.classList.add(data.types[data.types.length - 1].type.name);
-      pType.innerHTML = item.type.name;
-      pTypeContainer.appendChild(pType);
-    });
+  data.types.slice().forEach((item) => {
+    const pType = document.createElement("li");
+    pType.classList.add("pokemon-type");
+    pType.classList.add(data.types[0].type.name);
+    pType.innerHTML = item.type.name;
+    pTypeContainer.appendChild(pType);
+  });
 }
 
 //Call n number of Pokemons
