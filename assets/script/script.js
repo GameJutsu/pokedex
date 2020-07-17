@@ -1,9 +1,20 @@
 const main = document.getElementById("pokemon-card-container");
 
-//Call an id'd Pokemon
-async function calculate(id) {
+//Calling an array of n Pokemon
+async function callPokemonArray(n, ofst) {
+  const res = await fetch(
+    `https://pokeapi.co/api/v2/pokemon?limit=${n}&offset=${ofst}`
+  );
+  const data = await res.json();
+  for (const item of data.results) {
+    await calculateName(item.name);
+  }
+}
+
+//Call a named Pokemon
+async function calculateName(name) {
   const api = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
   const data = await res.json();
   const card = document.createElement("div");
   const cardBG = document.createElement("img");
@@ -22,12 +33,12 @@ async function calculate(id) {
   pImg.classList.add("pokemon-image");
 
   //Adding required HTML contents
-  pName.innerHTML = data.name;
-  pID.innerHTML = `<em>#${idPadding(id)}</em>`;
+  pName.innerHTML = name;
+  pID.innerHTML = `<em>#${idPadding(data.id)}</em>`;
 
   //Adding image source
   cardBG.src = "assets/img/pokeball.png";
-  pImg.src = `${api}${idPadding(id)}.png`;
+  pImg.src = `${api}${idPadding(data.id)}.png`;
 
   //Appending elements to their respective parent elements
   main.appendChild(card);
@@ -47,13 +58,6 @@ async function calculate(id) {
   });
 }
 
-//Call n number of Pokemons
-function callPokemons(n) {
-  for (var i = 1; i <= n; i++) {
-    calculate(i);
-  }
-}
-
 //Padding for id
 function idPadding(id) {
   id = id.toString();
@@ -65,4 +69,5 @@ function idPadding(id) {
   return id;
 }
 
-callPokemons(251);
+//Call an array of 251 Pokemon
+callPokemonArray(251, 0);
