@@ -1,14 +1,22 @@
 const main = document.getElementById("pokemon-card-container");
+const body = document.body;
+const preloader = document.getElementById("preloader");
+const loadText = document.getElementById("loadText");
+var loadedPokemons;
 
-//Calling an array of n Pokemon
+//Calling an array of n Pokemon then calling each
 async function callPokemonArray(n, ofst) {
   const res = await fetch(
     `https://pokeapi.co/api/v2/pokemon?limit=${n}&offset=${ofst}`
   );
   const data = await res.json();
+  loadedPokemons = 0;
   for (const item of data.results) {
     await calculateName(item.name);
+    loadedPokemons++;
+    loadText.innerText = Math.floor((loadedPokemons * 100) / n) + "%";
   }
+  preloader.style.display = "none";
 }
 
 //Call a named Pokemon

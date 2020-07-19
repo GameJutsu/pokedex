@@ -10,6 +10,32 @@ body {
   justify-content: center;
 }
 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url(https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif);
+  background-repeat: no-repeat;
+  background-size: min(100vw, 800px);
+  background-position: center;
+  background-color: #171b1e;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#loadText {
+  z-index: 100;
+  margin-top: 350px;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
 .main-background {
   width: 100px;
   position: absolute;
