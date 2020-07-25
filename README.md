@@ -1,4 +1,4 @@
 # Pokedex
-A Pokedex to display all gen 1 Pokemon
+A Pokedex to display Pokemon, their type and ID using PokeAPI through fetchAPI.
 
-Demo:- [Pokemon](https://gamejutsu-pokedex.netlify.app/)
+Demo:- [Pokedex](https://gamejutsu-pokedex.netlify.app/)
