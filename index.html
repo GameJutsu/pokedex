@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/f06cbd7842.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/f06cbd7842.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/stylesheet/style.css" />
+    
     <title>Pokedex</title>
   </head>
 
   <body>
+    <!-- Preloader -->
     <div id="preloader">
-      <div id="loadText">43%</div>
+      <div id="loadText">0%</div>
     </div>
 
+    <!-- Background Pokeball -->
     <img src="assets/img/pokeball.png" class="main-background" />
 
+    <!-- Main Navbar -->
     <div class="header-container">
       <div class="navbar">
         <button class="back-button">
@@ -28,9 +33,10 @@
       <h1 class="header">Pokedex</h1>
     </div>
 
+    <!-- Container for PokeCards -->
     <div class="pokemon-card-container" id="pokemon-card-container">
       <!-- Sample Pokemon Card -->
-      <!-- <div class="pokemon-card">
+      <div class="pokemon-card">
         <img src="assets/img/pokeball.png" class="pokemon-card-background" />
         <p class="pokemon-id"><em>#001</em></p>
         <p class="pokemon-name">Bulbasaur</p>
@@ -42,9 +48,13 @@
           src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
           class="pokemon-image"
         />
-      </div> -->
+      </div>
     </div>
 
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Main Script -->
     <script src="assets/script/script.js"></script>
   </body>
 </html>
