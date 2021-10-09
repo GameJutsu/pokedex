@@ -1,7 +1,10 @@
 const main = document.getElementById('pokemon-card-container');
+const genContainer = document.getElementById('pokemon-gen-container');
 const imageURL = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
 const preloader = document.getElementById('preloader');
 const loadText = document.getElementById('loadText');
+const genButtons = document.getElementsByClassName('btn');
+const countPokemon = { 1: [ 1, 151 ], 2: [ 152, 251 ], 3: [ 252, 386 ] };
 
 // Disable the preloader
 preloader.style.display = 'none';
@@ -77,4 +80,14 @@ const idPadding = (id) => {
 };
 
 //Running function for 251 Pokemon
-getAndAddMultiplePokemon(1, 151);
+// getAndAddMultiplePokemon(1, 151);
+
+// Addding Event listeners to GenButtons
+[ ...genButtons ].forEach((btn) => {
+	btn.addEventListener('click', () => {
+		console.log(countPokemon[parseInt(btn.id)][0]);
+		console.log(countPokemon[parseInt(btn.id)][1]);
+		genContainer.style.display = 'none';
+		getAndAddMultiplePokemon(countPokemon[parseInt(btn.id)][0], countPokemon[parseInt(btn.id)][1]);
+	});
+});
