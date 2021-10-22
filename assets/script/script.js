@@ -4,7 +4,7 @@ const imageURL = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
 const preloader = document.getElementById('preloader');
 const loadText = document.getElementById('loadText');
 const genButtons = document.getElementsByClassName('btn');
-const countPokemon = { 1: [1, 151], 2: [152, 100], 3: [252, 135], 4: [387, 107] };
+const countPokemon = { 1: [1, 151], 2: [152, 100], 3: [252, 135], 4: [387, 107], 5: [494, 156] };
 
 // Disable the preloader
 preloader.style.display = 'none';
