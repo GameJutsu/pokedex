@@ -18,13 +18,12 @@ const countPokemon = {
 // Disable the preloader
 preloader.style.display = 'none';
 
-// Function to call one Pokemon with id
+// Function to call one Pokemon
 const getPokemon = async (id) => {
 	const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
 	return res.data;
 };
 
-// Function to call 'count' Pokemons starting from id 'start'
 const getAndAddMultiplePokemon = async (start, count) => {
 	let loadedPokemons = 0;
 	for (let i = start; i < start + count; i++) {
