@@ -121,6 +121,20 @@ body {
 	box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
 	text-transform: capitalize;
 	overflow: hidden;
+	transition : 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+	/* border: 1px solid rgba(255, 255, 255, 0.9); */
+	border-top-left-radius: 10px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 10px;
+	margin: 10px 5px;
+	position: relative;
+	/* box-shadow: 6px 6px 6px 0px rgba(255, 15, 150, 0.4); */
+	text-transform: capitalize;
+	overflow: hidden;
 }
 
 .pokemon-id {
