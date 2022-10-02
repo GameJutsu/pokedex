@@ -4,16 +4,7 @@ const imageURL = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
 const preloader = document.getElementById('preloader');
 const loadText = document.getElementById('loadText');
 const genButtons = document.getElementsByClassName('btn');
-const countPokemon = {
-	1: [ 1, 151 ],
-	2: [ 152, 100 ],
-	3: [ 252, 135 ],
-	4: [ 387, 107 ],
-	5: [ 494, 156 ],
-	6: [ 650, 72 ],
-	7: [ 722, 88 ],
-	8: [ 810, 96 ]
-};
+const countPokemon = { 1: [1, 151], 2: [152, 100], 3: [252, 135], 4: [387, 107], 5: [494, 156], 6: [650, 72], 7: [722, 88] };
 
 // Disable the preloader
 preloader.style.display = 'none';
@@ -93,7 +84,7 @@ const idPadding = (id) => {
 // getAndAddMultiplePokemon(1, 151);
 
 // Addding Event listeners to GenButtons
-[ ...genButtons ].forEach((btn) => {
+[...genButtons].forEach((btn) => {
 	btn.addEventListener('click', () => {
 		console.log(countPokemon[parseInt(btn.id)][0]);
 		console.log(countPokemon[parseInt(btn.id)][1]);
